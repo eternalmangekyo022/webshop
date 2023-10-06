@@ -1,7 +1,6 @@
-import { useEffect } from 'react'
+//import { useEffect } from 'react'
 
-export default function App() {
-	useEffect(() => { console.log(' f') }, [])
+export default function Home() {
 
 	return <>Home</>
 }
