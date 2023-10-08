@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-//import axios from 'axios'
+import axios from 'axios'
 import Cart from '../assets/CartBuy.svg'
-import sample from '../../sample.json'
 
 interface Props {
 	addToCart: (product: Product) => void;
@@ -12,12 +11,11 @@ export default function Products({ addToCart, animateTo }: Props) {
 	const [products, setProducts] = useState<Product[]>([]);
 
 	useEffect(() => {
-		/**async function onLoad(): Promise<void> {
+		async function onLoad(): Promise<void> {
 			const { data } = await axios.get<Product[]>('https://fakestoreapi.com/products', { headers: { 'Content-Type': 'application/json' } })
 			setProducts(data);
-		} */
-		//onLoad();
-		setProducts(sample)
+		}
+		onLoad();
 	}, [])
 	return <div className='relative left-1/2 -translate-x-1/2 w-[90%] h-full bg-white rounded-xl flex gap-6 flex-wrap items-center justify-evenly overflow-y-scroll'>
 		{products.map(({ category, id, image, price, rating, title }: Product, idx: number) => 
