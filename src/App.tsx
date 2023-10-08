@@ -36,7 +36,7 @@ export default function App() {
         <span style={{ backgroundColor: cart.length ? 'rgb(74, 222, 128)': '#FFCC70' }} className='absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2 opacity-50 rounded-md text-center px-2 transition-[.2s] group-hover:opacity-0 select-none'>{cart.length ? '$' + price: 'Empty'}</span>
         <div className='overflow-y-auto opacity-0 transition-[.3s] ease-in group-hover:opacity-100 absolute w-[25rem] h-0 group-hover:h-72 bg-white rounded-md border-2 border-black z-10 max-h-72 -left-40'>
           {/**ide jon minden cart item */}
-          {cart.length < 1 ? <span className='text-gray-500 font-bold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center opacity-75 select-none'>No items yet!</span>: <>{cart.map(({ id, image, price: _price, category, title }, idx) => 
+          {cart.length < 1 ? <span className='text-gray-500 font-bold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center opacity-75 select-none'>No items yet!</span>: <>{cart.map(({ price: _price, title }, idx) => 
             <div className='w-full h-20 border-b-2 flex justify-center items-center relative select-none'>
               <span className='absolute left-3 font-bold text-green-700'>{_price}$</span>
               <span>{formatTitle(title)}</span>
